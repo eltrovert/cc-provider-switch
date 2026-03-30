@@ -1,0 +1,13 @@
+{
+  "name": "litellm",
+  "description": "LiteLLM proxy",
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:4000",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "haiku",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "sonnet",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "opus"
+  },
+  "settings": {
+    "model": "opus"
+  }
+}

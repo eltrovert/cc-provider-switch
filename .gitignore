@@ -1,0 +1,9 @@
+# User-specific config (contains active provider)
+config.json
+
+# Claude Code local settings
+.claude/
+
+# Provider files may contain API tokens
+# Copy from examples/ and customize
+providers/z-ai.json
