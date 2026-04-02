@@ -1,6 +1,6 @@
 # cc-provider-switch
 
-Switch [Claude Code](https://docs.anthropic.com/en/docs/claude-code) API providers instantly —Anthropic, LiteLLM, Ollama, or any OpenAI-compatible proxy.
+Switch [Claude Code](https://docs.anthropic.com/en/docs/claude-code) API providers instantly — Anthropic, LiteLLM, Ollama, or any OpenAI-compatible proxy.
 
 ## How It Works
 
@@ -29,14 +29,29 @@ Requires [`jq`](https://stedolan.github.io/jq/).
 ## Usage
 
 ```bash
-cc-switch                # Interactive menu
-cc-switch anthropic      # Switch to Anthropic directly
-cc-switch status         # Show active provider
-cc-switch list           # List all providers
+cc-switch                     # Interactive menu
+cc-switch anthropic            # Switch to Anthropic directly
+cc-switch status               # Show current provider
+cc-switch list                 # List all providers
+cc-switch validate             # Validate all provider configs
+cc-switch check                # Health check all providers
+cc-switch check anthropic      # Health check specific provider
+cc-switch rollback             # Undo last switch
 
 # Project-specific settings
 cc-switch -p ~/myproject ollama      # Switch project to Ollama
 cc-switch -p ~/myproject status      # Check project's active provider
+cc-switch -p ~/myproject rollback    # Rollback project settings
+```
+
+### Shell Completions
+
+```bash
+# Bash
+echo 'source ~/cc-provider-switch/completions/cc-switch.bash' >> ~/.bashrc
+
+# Zsh
+echo 'source ~/cc-provider-switch/completions/cc-switch.zsh' >> ~/.zshrc
 ```
 
 ## Adding Providers
@@ -89,6 +104,14 @@ cp providers/examples/z-ai.example.json providers/z-ai.json
 | `ollama` | Local Ollama | No |
 | `litellm` | LiteLLM proxy | Varies |
 | `cliproxyapi` | CliproxyAPI proxy | Yes |
+
+## Development
+
+Run tests with [BATS](https://github.com/bats-core/bats-core):
+
+```bash
+bats test/
+```
 
 ## License
 
