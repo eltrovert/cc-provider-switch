@@ -1,0 +1,14 @@
+{
+  "name": "cerebras",
+  "description": "Cerebras API",
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "YOUR_CEREBRAS_API_KEY_HERE",
+    "ANTHROPIC_BASE_URL": "https://api.cerebras.ai/v1",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "llama3.1-8b",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "llama3.1-70b",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "llama-3.3-70b"
+  },
+  "settings": {
+    "model": "opus"
+  }
+}

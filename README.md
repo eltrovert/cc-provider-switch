@@ -96,7 +96,10 @@ cp providers/examples/z-ai.example.json providers/z-ai.json
 | `anthropic` | Default Anthropic API | Yes (via `ANTHROPIC_API_KEY`) |
 | `ollama` | Local Ollama | No |
 | `litellm` | LiteLLM proxy | Varies |
-| `cliproxyapi` | CliproxyAPI proxy | Yes |
+| `cliproxyapi` | CliproxyAPI local gateway | Yes |
+| `openrouter` | OpenRouter API | Yes |
+| `cerebras` | Cerebras API | Yes |
+| `groq` | Groq API | Yes |
 | `z-ai` | Z.ai API | Yes |
 
 ## Development
