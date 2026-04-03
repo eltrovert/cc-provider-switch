@@ -4,27 +4,22 @@ Switch [Claude Code](https://docs.anthropic.com/en/docs/claude-code) API provide
 
 ## How It Works
 
-Each provider is a JSON file in `providers/` that defines environment variables and settings overrides. When you switch, the tool:
-
-1. Backs up your current `~/.claude/settings.json`
-2. Removes all provider-managed keys from settings
-3. Applies the new provider's env vars and settings
-4. Tracks the active provider in `config.json`
+Each provider is a JSON file in `providers/` that defines environment variables and settings overrides. When you switch, the tool backs up your current settings, clears previous provider config, and applies the new provider's values.
 
 ## Install
 
+Requires [`jq`](https://stedolan.github.io/jq/).
+
+**One-liner:**
 ```bash
-# Clone
-git clone https://github.com/youruser/cc-provider-switch.git ~/cc-provider-switch
-
-# Symlink to PATH
-ln -sf ~/cc-provider-switch/cc-switch ~/.local/bin/cc-switch
-
-# Create your config
-cp config.example.json config.json
+curl -fsSL https://raw.githubusercontent.com/elmuhammadcholidh/cc-provider-switch/main/install.sh | bash
 ```
 
-Requires [`jq`](https://stedolan.github.io/jq/).
+**Manual:**
+```bash
+git clone https://github.com/elmuhammadcholidh/cc-provider-switch.git ~/cc-provider-switch
+cd ~/cc-provider-switch && make install
+```
 
 ## Usage
 
@@ -75,11 +70,9 @@ Create `providers/<name>.json`:
 }
 ```
 
-Optional fields:
-- `settings` — overrides for Claude Code's `settings.json` (e.g. `"model": "opus[1m]"`)
-- `env` — any environment variables injected into Claude Code's settings
+See `providers/examples/` for more.
 
-See `providers/examples/` for more examples.
+> **Note:** Provider files may contain API tokens. Add them to `.gitignore` or copy from examples and edit locally.
 
 ### Protecting API Tokens
 
