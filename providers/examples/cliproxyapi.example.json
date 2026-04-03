@@ -1,0 +1,14 @@
+{
+  "name": "cliproxyapi",
+  "description": "CliproxyAPI",
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "YOUR_CLIPROXYAPI_TOKEN_HERE",
+    "ANTHROPIC_BASE_URL": "https://api.cliproxyapi.com/v1",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5-20251001",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6"
+  },
+  "settings": {
+    "model": "opus"
+  }
+}
