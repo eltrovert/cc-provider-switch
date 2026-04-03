@@ -97,6 +97,7 @@ cp providers/examples/z-ai.example.json providers/z-ai.json
 | `ollama` | Local Ollama | No |
 | `litellm` | LiteLLM proxy | Varies |
 | `cliproxyapi` | CliproxyAPI proxy | Yes |
+| `z-ai` | Z.ai API | Yes |
 
 ## Development
 

@@ -6,4 +6,5 @@ config.json
 
 # Provider files may contain API tokens
 # Copy from examples/ and customize
-providers/z-ai.json
+# (already-tracked safe providers are unaffected)
+providers/*.json
