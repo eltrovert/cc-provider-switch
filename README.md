@@ -12,12 +12,12 @@ Requires [`jq`](https://stedolan.github.io/jq/).
 
 **One-liner:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/elmuhammadcholidh/cc-provider-switch/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/eltrovert/cc-provider-switch/main/install.sh | bash
 ```
 
 **Manual:**
 ```bash
-git clone https://github.com/elmuhammadcholidh/cc-provider-switch.git ~/cc-provider-switch
+git clone https://github.com/eltrovert/cc-provider-switch.git ~/cc-provider-switch
 cd ~/cc-provider-switch && make install
 ```
 

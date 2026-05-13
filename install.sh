@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_URL="https://github.com/elmuhammadcholidh/cc-provider-switch.git"
+REPO_URL="https://github.com/eltrovert/cc-provider-switch.git"
 INSTALL_DIR="${CC_SWITCH_DIR:-$HOME/cc-provider-switch}"
 BIN_DIR="${CC_SWITCH_BIN:-$HOME/.local/bin}"
 
