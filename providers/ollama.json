@@ -6,7 +6,8 @@
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "llama3.2",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "llama3.3",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "llama3.3",
-    "ANTHROPIC_MODEL": "llama3.3"
+    "ANTHROPIC_MODEL": "llama3.3",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "llama3.3"
   },
   "settings": {
     "model": "llama3.3"

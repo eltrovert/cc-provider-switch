@@ -152,7 +152,8 @@ list_model_profiles() {
             marker=" ${GREEN}(active)${NC}"
         fi
         local opus=$(jq -r ".model_profiles[\"$profile\"].opus" "$provider_file")
-        echo -e "  ${YELLOW}${profile}${NC}  opus=${opus}${marker}"
+        local fable=$(jq -r ".model_profiles[\"$profile\"].fable // .model_profiles[\"$profile\"].opus" "$provider_file")
+        echo -e "  ${YELLOW}${profile}${NC}  opus=${opus}  fable=${fable}${marker}"
     done
     echo
 }
@@ -194,14 +195,16 @@ switch_model() {
 
     local profile=$(jq -c ".model_profiles[\"$target\"]" "$provider_file")
     local opus=$(jq -r '.opus' <<< "$profile")
+    local fable=$(jq -r '.fable // .opus' <<< "$profile")
     local sonnet=$(jq -r '.sonnet' <<< "$profile")
     local haiku=$(jq -r '.haiku' <<< "$profile")
     local context=$(jq -r '.context // "opus"' <<< "$profile")
 
     cp "$SETTINGS_FILE" "$BACKUP_FILE"
 
-    local merged=$(jq --arg opus "$opus" --arg sonnet "$sonnet" --arg haiku "$haiku" --arg context "$context" '
+    local merged=$(jq --arg opus "$opus" --arg fable "$fable" --arg sonnet "$sonnet" --arg haiku "$haiku" --arg context "$context" '
         .env.ANTHROPIC_DEFAULT_OPUS_MODEL = $opus |
+        .env.ANTHROPIC_DEFAULT_FABLE_MODEL = $fable |
         .env.ANTHROPIC_DEFAULT_SONNET_MODEL = $sonnet |
         .env.ANTHROPIC_DEFAULT_HAIKU_MODEL = $haiku |
         .env.ANTHROPIC_MODEL = $context |
@@ -214,6 +217,7 @@ switch_model() {
 
     echo -e "${GREEN}Switched model to $target${NC}"
     echo "  opus=$opus"
+    echo "  fable=$fable"
     echo "  sonnet=$sonnet"
     echo "  haiku=$haiku"
     echo "  context=$context"
@@ -333,12 +337,14 @@ switch_provider() {
         if jq -e ".model_profiles[\"$saved_model\"]" "$provider_file" > /dev/null 2>&1; then
             local profile=$(jq -c ".model_profiles[\"$saved_model\"]" "$provider_file")
             local opus=$(jq -r '.opus' <<< "$profile")
+            local fable=$(jq -r '.fable // .opus' <<< "$profile")
             local sonnet=$(jq -r '.sonnet' <<< "$profile")
             local haiku=$(jq -r '.haiku' <<< "$profile")
             local context=$(jq -r '.context // "opus"' <<< "$profile")
 
-            merged=$(jq --arg opus "$opus" --arg sonnet "$sonnet" --arg haiku "$haiku" --arg context "$context" '
+            merged=$(jq --arg opus "$opus" --arg fable "$fable" --arg sonnet "$sonnet" --arg haiku "$haiku" --arg context "$context" '
                 .env.ANTHROPIC_DEFAULT_OPUS_MODEL = $opus |
+                .env.ANTHROPIC_DEFAULT_FABLE_MODEL = $fable |
                 .env.ANTHROPIC_DEFAULT_SONNET_MODEL = $sonnet |
                 .env.ANTHROPIC_DEFAULT_HAIKU_MODEL = $haiku |
                 .env.ANTHROPIC_MODEL = $context |

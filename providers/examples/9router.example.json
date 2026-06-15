@@ -1,0 +1,66 @@
+{
+  "name": "9router",
+  "description": "9Router Local Gateway",
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:20128",
+    "ANTHROPIC_API_KEY": "YOUR_9ROUTER_TOKEN_HERE",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "cc/claude-haiku-4-5-20251001",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "cc/claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "cc/claude-opus-4-8",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "cc/claude-fable-5"
+  },
+  "settings": {
+    "model": "opus"
+  },
+  "model_profiles": {
+    "claude": {
+      "opus": "cc/claude-opus-4-8",
+      "sonnet": "cc/claude-sonnet-4-6",
+      "haiku": "cc/claude-haiku-4-5-20251001",
+      "context": "cc/claude-opus-4-8",
+      "fable": "cc/claude-fable-5"
+    },
+    "glm": {
+      "opus": "glm/glm-5.2",
+      "sonnet": "glm/glm-5.1",
+      "haiku": "glm/glm-5-turbo",
+      "context": "glm/glm-5.2",
+      "fable": "glm/glm-5.2"
+    },
+    "gemini": {
+      "opus": "gemini/gemini-3.1-pro-preview",
+      "sonnet": "gemini/gemini-3-flash-preview",
+      "haiku": "gemini/gemini-3.1-flash-lite-preview",
+      "context": "gemini/gemini-3.1-pro-preview",
+      "fable": "gemini/gemini-3.1-pro-preview"
+    },
+    "gpt": {
+      "opus": "cx/gpt-5.5",
+      "sonnet": "cx/gpt-5.4",
+      "haiku": "cx/gpt-5.1",
+      "context": "cx/gpt-5.5",
+      "fable": "cx/gpt-5.5"
+    },
+    "deepseek": {
+      "opus": "sn/DeepSeek-V3.2",
+      "sonnet": "sn/DeepSeek-V3.1",
+      "haiku": "sn/gpt-oss-120b",
+      "context": "sn/DeepSeek-V3.2",
+      "fable": "sn/DeepSeek-V3.2"
+    },
+    "cerebras": {
+      "opus": "cerebras/gpt-oss-120b",
+      "sonnet": "cerebras/qwen-3-235b-a22b-instruct-2507",
+      "haiku": "cerebras/llama-3.3-70b",
+      "context": "cerebras/gpt-oss-120b",
+      "fable": "cerebras/gpt-oss-120b"
+    },
+    "groq": {
+      "opus": "groq/openai/gpt-oss-120b",
+      "sonnet": "groq/qwen/qwen3-32b",
+      "haiku": "groq/llama-3.3-70b-versatile",
+      "context": "groq/openai/gpt-oss-120b",
+      "fable": "groq/openai/gpt-oss-120b"
+    }
+  }
+}
