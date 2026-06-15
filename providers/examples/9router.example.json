@@ -48,6 +48,13 @@
       "context": "sn/DeepSeek-V3.2",
       "fable": "sn/DeepSeek-V3.2"
     },
+    "kr": {
+      "opus": "kr/claude-sonnet-4.5-thinking-agentic",
+      "sonnet": "kr/claude-sonnet-4.5",
+      "haiku": "kr/claude-haiku-4.5",
+      "context": "kr/claude-sonnet-4.5-thinking-agentic",
+      "fable": "kr/claude-sonnet-4.5-thinking-agentic"
+    },
     "cerebras": {
       "opus": "cerebras/gpt-oss-120b",
       "sonnet": "cerebras/qwen-3-235b-a22b-instruct-2507",
@@ -61,6 +68,20 @@
       "haiku": "groq/llama-3.3-70b-versatile",
       "context": "groq/openai/gpt-oss-120b",
       "fable": "groq/openai/gpt-oss-120b"
+    },
+    "ag": {
+      "opus": "ag/gemini-pro-agent",
+      "sonnet": "ag/gemini-3-flash-agent",
+      "haiku": "ag/gemini-3.5-flash-low",
+      "context": "ag/gemini-pro-agent",
+      "fable": "ag/gemini-pro-agent"
+    },
+    "ag-claude": {
+      "opus": "ag/claude-opus-4-6-thinking",
+      "sonnet": "ag/claude-sonnet-4-6",
+      "haiku": "kr/claude-haiku-4.5",
+      "context": "ag/claude-opus-4-6-thinking",
+      "fable": "cc/claude-fable-5"
     }
   }
 }
