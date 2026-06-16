@@ -2,7 +2,7 @@
   "name": "9router",
   "description": "9Router Local Gateway",
   "env": {
-    "ANTHROPIC_BASE_URL": "http://localhost:20128",
+    "ANTHROPIC_BASE_URL": "https://ai-router.eltrovert.com",
     "ANTHROPIC_API_KEY": "YOUR_9ROUTER_TOKEN_HERE",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "cc/claude-haiku-4-5-20251001",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "cc/claude-sonnet-4-6",

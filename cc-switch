@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 PROVIDERS_DIR="${CC_PROVIDERS_DIR:-$SCRIPT_DIR/providers}"
 CONFIG_FILE="${CC_CONFIG_FILE:-$SCRIPT_DIR/config.json}"
 
-SETTINGS_FILE="${CC_SETTINGS_FILE:-$HOME/.claude/settings.json}"
+SETTINGS_FILE="${CC_SETTINGS_FILE:-$HOME/.claude/settings.local.json}"
 BACKUP_FILE=""
 PROJECT_PATH=""
 MODEL_FLAG=""
