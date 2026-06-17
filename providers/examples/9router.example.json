@@ -6,7 +6,7 @@
     "ANTHROPIC_API_KEY": "YOUR_9ROUTER_TOKEN_HERE",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "cc/claude-haiku-4-5-20251001",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "cc/claude-sonnet-4-6",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "cc/claude-opus-4-8",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "cc/claude-opus-4-8[1m]",
     "ANTHROPIC_DEFAULT_FABLE_MODEL": "cc/claude-fable-5"
   },
   "settings": {
@@ -14,10 +14,10 @@
   },
   "model_profiles": {
     "claude": {
-      "opus": "cc/claude-opus-4-8",
+      "opus": "cc/claude-opus-4-8[1m]",
       "sonnet": "cc/claude-sonnet-4-6",
       "haiku": "cc/claude-haiku-4-5-20251001",
-      "context": "cc/claude-opus-4-8",
+      "context": "cc/claude-opus-4-8[1m]",
       "fable": "cc/claude-fable-5"
     },
     "glm": {
